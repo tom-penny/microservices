@@ -1,0 +1,15 @@
+.quantity-control {
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__btn {
+        margin-top: 0.2rem;
+    }
+
+    &__value {
+        font-weight: 500;
+    }
+}

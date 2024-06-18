@@ -1,0 +1,49 @@
+@import '../../styles/mixins';
+
+.footer {
+    
+    background-color: #171717;
+    padding: 10vh var(--margin);
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    &__link {
+        @include link(#888);
+        font-size: 0.8rem;
+    }
+
+    &__logo {
+        font-size: 20pt;
+    }
+
+    &__logo-letter {
+        color: #FFF;
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(-30px);
+
+        &--visible {
+            animation: drop 0.3s forwards;
+        }
+    }
+
+    @media (min-width: 768px) {
+        
+        &__content {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+@keyframes drop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,5 @@
+@import '../../styles/mixins';
+
+.not-found-page {
+    @include page;
+}

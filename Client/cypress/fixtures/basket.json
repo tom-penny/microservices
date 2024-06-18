@@ -1,0 +1,14 @@
+{
+    "64dbe1957b39fa420fcbec92": {
+        "displayName": "Art Deco Armchair",
+        "displayImage": "/images/products/64dbe1957b39fa420fcbec92-1.jpg",
+        "unitPrice": 2150,
+        "quantity": 2
+    },
+    "64dbc4057b39fa420fcbebc5": {
+        "displayName": "Barrel Bedside Table",
+        "displayImage": "/images/products/64dbc4057b39fa420fcbebc5-1.jpg",
+        "unitPrice": 500,
+        "quantity": 2
+    }
+}

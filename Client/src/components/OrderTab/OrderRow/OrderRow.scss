@@ -1,0 +1,57 @@
+.order-row {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 0.8rem;
+    position: relative;
+    
+    &__content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    &__items {
+    }
+
+    &__item {
+        margin-left: 10px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__toggle {
+        min-width: 8pt;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__toggle-line {
+        height: 1.5px;
+        width: 8pt;
+        background-color: black;
+        position: absolute;
+        transition: transform 0.2s ease;
+
+        &:first-of-type {
+            transform: rotate(45deg);
+            right: 30%;
+        }
+
+        &:last-of-type {
+            transform: rotate(-45deg);
+            left: 30%;
+        }
+
+        &--active:first-of-type {
+            transform: rotate(-45deg);
+        }
+
+        &--active:last-of-type {
+            transform: rotate(45deg);
+        }
+    }
+}

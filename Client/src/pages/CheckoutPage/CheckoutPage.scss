@@ -1,0 +1,25 @@
+@import '../../styles/mixins';
+
+.checkout-page {
+    @include page;
+    @include view;
+    
+    &__btn {
+        @include button(#FFF, #414F4A);
+        max-width: 200px;
+    }
+}
+
+.checkout-details {
+    
+    text-align: center;
+
+    &__message {
+        font-size: 1.5rem;
+    }
+
+    &__reference {
+        margin-top: 20px;
+        font-size: 0.6rem;
+    }
+}

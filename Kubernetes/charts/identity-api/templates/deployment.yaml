@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        env:
+        - name: PORT
+          value: "{{ .Values.environment.PORT }}"
+        - name: API_KEY
+          value: "{{ .Values.environment.API_KEY }}"
+        - name: FIREBASE_API_KEY
+          value: "{{ .Values.environment.FIREBASE_API_KEY }}"
+        - name: FIREBASE_AUTH_DOMAIN
+          value: "{{ .Values.environment.FIREBASE_AUTH_DOMAIN }}"
+        - name: FIREBASE_PROJECT_ID
+          value: "{{ .Values.environment.FIREBASE_PROJECT_ID }}"
+        - name: FIREBASE_STORAGE_BUCKET
+          value: "{{ .Values.environment.FIREBASE_STORAGE_BUCKET }}"
+        - name: FIREBASE_MESSAGING_SENDER_ID
+          value: "{{ .Values.environment.FIREBASE_MESSAGING_SENDER_ID }}"
+        - name: FIREBASE_APP_ID
+          value: "{{ .Values.environment.FIREBASE_APP_ID }}"

@@ -1,0 +1,63 @@
+@mixin page {
+    padding-left: var(--margin);
+    padding-right: var(--margin);
+}
+
+@mixin margins {
+    padding-left: var(--margin);
+    padding-right: var(--margin);
+}
+
+@mixin field {
+    outline: none;
+    border: none;
+    border: solid 1pt #DBEBDD;
+    border-radius: 0.25rem;
+}
+
+@mixin view {
+    height: 100vh;
+    padding-left: var(--margin);
+    padding-right: var(--margin);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin link($color) {
+    text-decoration: none;
+    color: $color;
+    cursor: pointer;
+}
+
+@mixin button($fg-color, $bg-color) {
+    border: none;
+    color: $fg-color;
+    background-color: $bg-color;
+    border-radius: 0.25rem;
+    font-size: 10pt;
+    font-weight: 600;
+    font-style: italic;
+    padding: 20px 50px;
+    cursor: pointer;
+}
+
+@mixin marquee($color, $duration) {
+    position: absolute;
+    font-weight: 600;
+    font-style: italic;
+    color: $color;
+    font-size: 4rem;
+    white-space: normal;
+    will-change: transform;
+    animation: marquee $duration linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(-50%);
+    }
+}

@@ -1,0 +1,127 @@
+@import '../../styles/mixins';
+
+.basket-page {
+    @include view;
+
+    background-color: #F7FCF7;
+
+}
+
+.basket-grid {
+
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    row-gap: 20px;
+
+    &__divider {
+        grid-column: span 10;
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+.basket-row {
+
+    &__image {
+        grid-column: 1 / span 2;
+        height: 60px;
+        object-fit: cover;
+    }
+    
+    &__name {
+        grid-column: 3 / span 2;
+        align-self: center;
+    }
+
+    &__price {
+        grid-column: 6 / span 2;
+        align-self: center;
+        justify-self: center;
+    }
+
+    &__control {
+        grid-column: 9 / span 2;
+        align-self: center;
+    }
+
+    &__btn {
+        margin-top: 0.2rem;
+    }
+
+    &__quantity {
+        grid-column: 9 / span 2;
+        justify-self: center;
+    }
+
+    &__subtotal {
+        display: none;
+    }
+
+    &__total {
+        grid-column: 9 / span 2;
+        justify-self: center;
+    }
+
+    @media (min-width: 768px) {
+        
+        &__image {
+            grid-column: 1 / span 1;
+            height: 100px;
+        }
+
+        &__name {
+            grid-column: 2 / span 2;
+        }
+
+        &__price {
+            grid-column: 5 / span 1;
+        }
+
+        &__control {
+            grid-column: 7 / span 2;
+            padding: 0 25%;
+        }
+
+        &__quantity {
+            grid-column: 7 / span 2;
+        }
+
+        &__subtotal {
+            display: block;
+            grid-column: 10 / span 1;
+            align-self: center;
+            justify-self: center;
+        }
+
+        &__total {
+            grid-column: 10 / span 1;
+        }
+    }
+}
+
+.basket-footer {
+
+    &__btn {
+        @include button(#FFF, #414F4A);
+    }
+}
+
+
+
+// .basket-grid {
+//     border-top: 1px solid #ddd;
+//     border-bottom: 1px solid #ddd;
+//     width: 100%;
+//     padding: 20px 0;
+
+//     display: grid;
+
+//     grid-template-columns: 40% 20% 20%;
+//     column-gap: 10%;
+//     row-gap: 20px;
+
+//     @media (min-width: 768px) {
+//         grid-template-columns: 30% 10% 20% 10%;
+//     }
+
+
+// }

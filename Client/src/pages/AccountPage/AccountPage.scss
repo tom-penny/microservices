@@ -1,0 +1,45 @@
+@import '../../styles/mixins';
+
+.account-page {
+    @include view;
+    background-color: #F7FCF7;
+
+}
+
+.account-menu {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    height: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    &__bar {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        border-bottom: 1px solid #DBEBDD;
+    }
+
+    &__tab {
+        flex: 1;
+        padding: 10px;
+        @include link(#000);
+    
+        svg {
+            padding-top: 2.5px;
+            margin-right: 10px;
+        }
+    
+        &--active {
+            border-bottom: 2px solid #b4ceb7;
+        }
+    }
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+}

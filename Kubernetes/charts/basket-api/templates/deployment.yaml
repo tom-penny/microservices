@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        env:
+        - name: PORT
+          value: "{{ .Values.environment.PORT }}"
+        - name: API_KEY
+          value: "{{ .Values.environment.API_KEY }}"
+        - name: REDIS_HOST
+          value: "{{ .Values.environment.REDIS_HOST }}"
+        - name: REDIS_PORT
+          value: "{{ .Values.environment.REDIS_PORT }}"
+        - name: AMQP_URI
+          value: "{{ .Values.environment.AMQP_URI }}"

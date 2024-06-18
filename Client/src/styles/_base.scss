@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --vw: 100vw;
+    --vh: 100vh;
+    --margin: 10vw;
+    --nav: #000;
+
+    font-size: calc(calc(var(--vw) / 200) + calc(var(--vh) / 75));
+}
+
+$font-size-body: calc(16px + min(0.5 * var(--vw), 0.5 * var(--vh)));
+
+$color-primary: #000;
+$color-secondary: #222;
